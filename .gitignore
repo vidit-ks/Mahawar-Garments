@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Test screenshots and logs
+*.png
+!assets/images/*.png
+!assets/images/*.jpg
+test_mobile.js
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
