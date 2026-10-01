@@ -3,57 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MAHAWAR GARMENTS — Luxury Indian Fashion House | Men & Kids</title>
-  <meta name="description" content="Mahawar Garments — Luxury Indian Fashion House established in Chandni Chowk, Delhi. Bespoke tailoring, royal occasion wear, and contemporary silhouettes for Men & Kids.">
-  <meta name="keywords" content="Mahawar Garments, luxury Indian menswear, designer sherwani Delhi, kids couture Delhi, bespoke tailoring Chandni Chowk, Indo-Western bandhgala, royal Indian fashion">
+  <title>Mahawar Garments — Digital Showroom | Men's Wear & Kids' Wear</title>
+  <meta name="description" content="Welcome to the Mahawar Garments Digital Showroom. Explore luxury Indian menswear, kids couture, bespoke occasion collections, and master tailoring from Chandni Chowk, Delhi.">
+  <meta name="keywords" content="Mahawar Garments, Chandni Chowk suits, Men ethnic wear Delhi, designer sherwani, kids festive wear, bespoke tailoring Chandni Chowk, Indo Western groom wear">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23541B1B'/><path d='M30 70 L30 30 L50 55 L70 30 L70 70' fill='none' stroke='%23B99A63' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/></svg>">
 
-  <!-- Preload Critical Hero Visual -->
+  <!-- Preload Critical Hero Photo -->
   <link rel="preload" as="image" href="assets/images/hero_model_elegance.png">
 
-  <!-- Editorial Luxury CSS Architecture -->
+  <!-- Main Luxury Showroom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="editorial-body">
+<body class="showroom-body">
 
   <!-- ==========================================================================
-       ULTRA-MINIMAL FLOATING HEADER
+       MAIN GLOBAL SHOWROOM NAVBAR
        ========================================================================== -->
-  <header class="editorial-header" id="site-header">
-    <div class="header-container">
+  <header class="showroom-header" id="site-header">
+    <div class="header-inner">
       
       <!-- Brand Logo -->
-      <a href="#hero" class="brand-logo" aria-label="Mahawar Garments Home">
+      <a href="#home" class="brand-logo" onclick="navigateTo('home'); return false;" aria-label="Mahawar Garments Home">
         <img src="assets/images/mahawar_logo.png" alt="Mahawar Garments" class="brand-logo-img">
       </a>
 
-      <!-- Minimal Navigation Links -->
-      <nav class="nav-links" aria-label="Main Navigation">
-        <a href="#two-worlds" class="nav-item">MEN</a>
-        <a href="#kids-chapter" class="nav-item">KIDS</a>
-        <a href="#mahawar-edit" class="nav-item">COLLECTIONS</a>
-        <a href="#brand-story" class="nav-item">ABOUT</a>
+      <!-- Primary Showroom Destinations -->
+      <nav class="nav-destinations" aria-label="Showroom Navigation">
+        <a href="#home" class="nav-link active" data-nav="home" onclick="navigateTo('home'); return false;">HOME</a>
+        <a href="#men" class="nav-link" data-nav="men" onclick="navigateTo('men'); return false;">MEN</a>
+        <a href="#kids" class="nav-link" data-nav="kids" onclick="navigateTo('kids'); return false;">KIDS</a>
+        <a href="#collections" class="nav-link" data-nav="collections" onclick="navigateTo('collections'); return false;">COLLECTIONS</a>
+        <a href="#services" class="nav-link" data-nav="services" onclick="navigateTo('services'); return false;">SERVICES</a>
+        <a href="#about" class="nav-link" data-nav="about" onclick="navigateTo('about'); return false;">ABOUT</a>
       </nav>
 
       <!-- Right Action Triggers -->
       <div class="header-actions">
         <!-- Search Trigger -->
-        <button type="button" class="header-icon-btn" id="header-search-btn" aria-label="Search">
+        <button type="button" class="action-btn" id="header-search-btn" aria-label="Search Showroom" title="Search">
           <svg viewBox="0 0 24 24">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
 
-        <!-- Menu Drawer Trigger -->
-        <button type="button" class="header-menu-btn" id="mobile-nav-toggle" aria-label="Open Navigation Menu">
-          <span class="menu-label">MENU</span>
-          <span class="menu-burger">
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-          </span>
+        <!-- Wishlist Trigger -->
+        <button type="button" class="action-btn" id="header-wishlist-btn" aria-label="View Wishlist" title="Wishlist">
+          <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="wishlist-count-badge">2</span>
+        </button>
+
+        <!-- Curated Bag Trigger -->
+        <button type="button" class="action-btn" id="header-cart-btn" aria-label="Enquiry Bag" title="Enquiry Bag">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge-count" id="cart-count-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button type="button" class="mobile-toggle-btn" id="mobile-nav-toggle" aria-label="Open Mobile Menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" fill="none" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
 
@@ -61,605 +81,548 @@
   </header>
 
   <!-- ==========================================================================
-       HERO — FULL-SCREEN EDITORIAL CAMPAIGN COVER
+       MULTI-SCREEN APP CONTAINER (PAGE VIEWS)
        ========================================================================== -->
-  <section class="hero-editorial" id="hero">
-    <div class="hero-canvas">
+  <main id="app-view">
+
+    <!-- ========================================================================
+         SCREEN 1: HOMEPAGE (DIGITAL SHOWROOM ENTRANCE)
+         ======================================================================== -->
+    <div class="screen-view active" id="view-home">
       
-      <!-- Oversized Background Brand Typography -->
-      <div class="hero-giant-word top">MAHAWAR</div>
-      
-      <!-- Main Photograph (Attached Image 1 — Unaltered Model in Palace) -->
-      <div class="hero-model-wrap">
-        <img 
-          src="assets/images/hero_model_elegance.png" 
-          alt="Mahawar Garments Bespoke Tuxedo Editorial Campaign in Royal Palace" 
-          class="hero-model-img"
-          fetchpriority="high">
-      </div>
+      <!-- 1. Opening Showroom Entrance Hero -->
+      <section class="entrance-hero">
+        <div class="entrance-container">
+          <div class="entrance-grid">
+            
+            <!-- Left / Center: Brand Identity & Statement -->
+            <div class="entrance-brand-col">
+              <span class="entrance-city-tag">CHANDNI CHOWK • DELHI</span>
+              
+              <h1 class="entrance-main-title">
+                MAHAWAR<br>
+                <span>GARMENTS</span>
+              </h1>
+              
+              <p class="entrance-tagline">
+                "Where Tradition Meets Modern Style"
+              </p>
 
-      <!-- Oversized Bottom Brand Typography -->
-      <div class="hero-giant-word bottom">GARMENTS</div>
+              <p class="entrance-desc">
+                Welcome to our digital showroom. Specialized in mastercrafted royal Indian menswear and celebratory youth couture.
+              </p>
 
-      <!-- Side Vertical Editorial Metadata -->
-      <div class="hero-side-meta left">
-        <span>ESTD. DELHI</span>
-        <span class="meta-dot">•</span>
-        <span>CHANDNI CHOWK</span>
-      </div>
+              <div class="entrance-quick-actions">
+                <button type="button" class="btn btn-burgundy" onclick="navigateTo('men')">
+                  ENTER MEN'S SHOWROOM →
+                </button>
+                <button type="button" class="btn btn-line" onclick="navigateTo('kids')">
+                  ENTER KIDS' SHOWROOM →
+                </button>
+              </div>
+            </div>
 
-      <div class="hero-side-meta right">
-        <span>CAMPAIGN 2026</span>
-        <span class="meta-dot">•</span>
-        <span>MEN & KIDS COUTURE</span>
-      </div>
+            <!-- Right: Hero Visual (Attached Image 1 — Standing Palace Model) -->
+            <div class="entrance-visual-col">
+              <div class="entrance-photo-frame">
+                <img 
+                  src="assets/images/hero_model_elegance.png" 
+                  alt="Bespoke Floral Tuxedo Suit in Royal Palace by Mahawar Garments" 
+                  class="entrance-photo"
+                  fetchpriority="high">
+              </div>
+              <div class="entrance-photo-caption">
+                <span class="caption-title">ATELIER SIGNATURE</span>
+                <span class="caption-detail">Bespoke Floral Tuxedo Suit</span>
+              </div>
+            </div>
 
-      <!-- Floating Editorial Tagline & Scroll Indicator -->
-      <div class="hero-footer-bar">
-        <div class="hero-tagline">
-          <span class="gold-rule"></span>
-          <span class="tagline-text">TRADITION, TAILORED.</span>
+          </div>
         </div>
-        
-        <a href="#brand-film" class="hero-scroll-btn" aria-label="Scroll to discover">
-          <span>SCROLL TO DISCOVER</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <polyline points="19 12 12 19 5 12"></polyline>
-          </svg>
-        </a>
-      </div>
+      </section>
+
+      <!-- 2. Cinematic Video Window (Directly on Homepage) -->
+      <section class="entrance-video-section">
+        <div class="entrance-video-box">
+          <div class="video-window-header">
+            <span class="video-window-tag">CINEMATIC SHOWROOM DISPLAY</span>
+            <h2 class="video-window-title">THE MAHAWAR EXPERIENCE</h2>
+          </div>
+
+          <div class="video-window-frame">
+            <video 
+              id="brand-film-video" 
+              class="video-window-element" 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="auto"
+              poster="assets/images/video_poster.jpg">
+              <source src="assets/videos/mahawar_brand_film.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+
+            <!-- Video Controls -->
+            <div class="video-window-controls">
+              <button type="button" id="video-sound-toggle-btn" class="video-pill" aria-label="Toggle Audio">
+                <span id="sound-toggle-text">UNMUTE SOUND</span>
+              </button>
+              <button type="button" id="video-playpause-btn" class="video-pill" aria-label="Pause Video">
+                <span id="playpause-text">PAUSE</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. The Two Showroom Entry Doors (Men & Kids) -->
+      <section class="entrance-doors-section">
+        <div class="doors-header">
+          <span class="section-kicker">CHOOSE YOUR SHOWROOM</span>
+          <h2 class="doors-title">TWO DEDICATED WORLDS</h2>
+        </div>
+
+        <div class="doors-grid">
+          
+          <!-- Door 1: MEN -->
+          <div class="door-card door-men" onclick="navigateTo('men')" role="button" tabindex="0">
+            <div class="door-bg-wrap">
+              <img src="assets/images/mens_editorial.jpg" alt="Men's Bespoke Showroom" class="door-bg-img" loading="lazy">
+            </div>
+            <div class="door-overlay"></div>
+            <div class="door-content">
+              <span class="door-tag">COLLECTION 01</span>
+              <h3 class="door-name">MEN</h3>
+              <p class="door-desc">"Sharp tailoring. Timeless tradition."</p>
+              <span class="door-btn">ENTER MEN'S SHOWROOM →</span>
+            </div>
+          </div>
+
+          <!-- Door 2: KIDS -->
+          <div class="door-card door-kids" onclick="navigateTo('kids')" role="button" tabindex="0">
+            <div class="door-bg-wrap">
+              <img src="assets/images/kids_editorial.jpg" alt="Kids' Festive Showroom" class="door-bg-img" loading="lazy">
+            </div>
+            <div class="door-overlay"></div>
+            <div class="door-content">
+              <span class="door-tag">COLLECTION 02</span>
+              <h3 class="door-name">KIDS</h3>
+              <p class="door-desc">"Festive style made for little moments."</p>
+              <span class="door-btn">ENTER KIDS' SHOWROOM →</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 4. Quick Directory Previews (Compact Navigation) -->
+      <section class="entrance-directory-section">
+        <div class="directory-container">
+          <div class="directory-grid">
+            
+            <a href="#collections" class="directory-item" onclick="navigateTo('collections'); return false;">
+              <span class="dir-idx">01</span>
+              <div class="dir-info">
+                <h4 class="dir-title">COLLECTIONS</h4>
+                <p class="dir-sub">Weddings, Sangeet, Festivals & Galas</p>
+              </div>
+              <span class="dir-arrow">→</span>
+            </a>
+
+            <a href="#services" class="directory-item" onclick="navigateTo('services'); return false;">
+              <span class="dir-idx">02</span>
+              <div class="dir-info">
+                <h4 class="dir-title">SERVICES</h4>
+                <p class="dir-sub">Master Tailoring, Express Alterations & Styling</p>
+              </div>
+              <span class="dir-arrow">→</span>
+            </a>
+
+            <a href="#about" class="directory-item" onclick="navigateTo('about'); return false;">
+              <span class="dir-idx">03</span>
+              <div class="dir-info">
+                <h4 class="dir-title">ABOUT & ATELIER</h4>
+                <p class="dir-sub">Our Chandni Chowk Story & Visiting Hours</p>
+              </div>
+              <span class="dir-arrow">→</span>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Compact Entrance Footer -->
+      <footer class="entrance-footer">
+        <div class="entrance-footer-inner">
+          <p>© 2026 Mahawar Garments • Chandni Chowk, Delhi • Men & Kids Luxury Fashion House</p>
+          <div class="entrance-footer-links">
+            <a href="tel:+917683079329">+91 76830 79329</a>
+            <a href="mailto:mahawargarments@gmail.com">mahawargarments@gmail.com</a>
+          </div>
+        </div>
+      </footer>
 
     </div>
-  </section>
 
-  <!-- ==========================================================================
-       CINEMATIC VIDEO — FULL-BLEED VISUAL PAUSE
-       ========================================================================== -->
-  <section class="cinematic-video-section" id="brand-film" aria-label="Mahawar Brand Film">
-    <div class="video-viewport">
-      <video 
-        id="brand-film-video" 
-        class="cinematic-video-el" 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        preload="auto"
-        poster="assets/images/video_poster.jpg">
-        <source src="assets/videos/mahawar_brand_film.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-
-      <!-- Subtle Vignette Frame -->
-      <div class="video-vignette"></div>
-
-      <!-- Minimal Statement Overlay -->
-      <div class="video-editorial-statement">
-        <span class="video-eyebrow">CINEMATIC ATELIER</span>
-        <h2 class="video-headline">THE ART OF DRESSING</h2>
-        <p class="video-tagline">Crafted for generations. Refined for today.</p>
-      </div>
-
-      <!-- Video Controls -->
-      <div class="video-floating-controls">
-        <button type="button" id="video-sound-toggle-btn" class="video-pill-btn" aria-label="Toggle Sound">
-          <span id="sound-toggle-text">UNMUTE SOUND</span>
-        </button>
-        <button type="button" id="video-playpause-btn" class="video-pill-btn" aria-label="Pause or Play">
-          <span id="playpause-text">PAUSE</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SECTION 01 — TWO WORLDS (SPLIT-SCREEN EDITORIAL SELECTION)
-       ========================================================================== -->
-  <section class="two-worlds-section" id="two-worlds">
-    <div class="two-worlds-container">
+    <!-- ========================================================================
+         SCREEN 2: MEN'S SHOWROOM PAGE
+         ======================================================================== -->
+    <div class="screen-view" id="view-men">
       
-      <!-- Left World: MEN -->
-      <a href="#men-chapter" class="world-panel men-world" aria-label="Discover Men's Collection">
-        <div class="world-bg-wrap">
-          <img src="assets/images/mens_editorial.jpg" alt="Men's Bespoke Sartorial Collection" class="world-bg-img" loading="lazy">
-        </div>
-        <div class="world-overlay"></div>
-        <div class="world-content">
-          <span class="world-num">CHAPTER 01</span>
-          <h2 class="world-title">MEN</h2>
-          <p class="world-quote">"Tailored for presence."</p>
-          <span class="world-cta">
-            <span>DISCOVER MEN</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-      <!-- Right World: KIDS -->
-      <a href="#kids-chapter" class="world-panel kids-world" aria-label="Discover Kids' Collection">
-        <div class="world-bg-wrap">
-          <img src="assets/images/kids_editorial.jpg" alt="Kids' Festive Couture Collection" class="world-bg-img" loading="lazy">
-        </div>
-        <div class="world-overlay"></div>
-        <div class="world-content">
-          <span class="world-num">CHAPTER 02</span>
-          <h2 class="world-title">KIDS</h2>
-          <p class="world-quote">"Made for their moments."</p>
-          <span class="world-cta">
-            <span>DISCOVER KIDS</span>
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SECTION 02 — MEN (ASYMMETRICAL EDITORIAL CHAPTER)
-       ========================================================================== -->
-  <section class="editorial-chapter men-chapter" id="men-chapter">
-    <div class="chapter-container">
-      
-      <!-- Asymmetrical Layout: 65% Image Showcase / 35% Typographic Links -->
-      <div class="chapter-grid">
-        
-        <!-- Left: Major Editorial Photo (Attached Image 2 — Unaltered Seated Model) -->
-        <div class="chapter-image-column">
-          <div class="chapter-image-frame">
+      <!-- Men's Hero Banner (Attached Image 2 — Seated Model in Haveli) -->
+      <section class="showroom-banner-section">
+        <div class="showroom-banner-grid">
+          
+          <div class="banner-photo-wrap">
             <img 
               src="assets/images/mens_model_seated.png" 
-              alt="Gentleman seated in Mahawar Garments navy Indo-Western royal bandhgala" 
-              class="chapter-img" 
-              loading="lazy">
+              alt="Gentleman seated in Royal Indo-Western Bandhgala by Mahawar Garments" 
+              class="banner-photo">
           </div>
-          <div class="chapter-image-caption">
-            <span>FIGURE 01 — ROYAL INDO-WESTERN BANDHGALA</span>
-            <span>SILK BROCADE JACQUARD</span>
-          </div>
-        </div>
 
-        <!-- Right: Typographic Category Index -->
-        <div class="chapter-content-column">
-          <div class="chapter-header">
-            <span class="chapter-tag">SARTORIAL DIRECTORY</span>
-            <h2 class="chapter-heading">MEN'S WEAR</h2>
-            <p class="chapter-subtext">
-              "From sharp Italian tailoring to timeless Indian silhouettes."
+          <div class="banner-text-wrap">
+            <span class="section-kicker">MENSWEAR SHOWROOM</span>
+            <h1 class="banner-title">MEN'S COLLECTION</h1>
+            <div class="banner-highlight">"CRAFTED FOR THE MOMENT"</div>
+            <p class="banner-desc">
+              From Italian-cut three-piece suits and embroidered tuxedos to handwoven silk kurtas, royal sherwanis, and modern Indo-Western bandhgalas.
             </p>
-          </div>
-
-          <!-- Elegant Typographic Links (Not Cards) -->
-          <nav class="typographic-index" aria-label="Men's Categories">
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Bespoke 3-Piece Italian Suits')">
-              <span class="index-idx">01</span>
-              <span class="index-title">SUITS & TUXEDOS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Tailored Blazers & Jackets')">
-              <span class="index-idx">02</span>
-              <span class="index-title">BLAZERS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Pure Silk Heritage Kurtas')">
-              <span class="index-idx">03</span>
-              <span class="index-title">KURTAS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Royal Groom & Wedding Sherwanis')">
-              <span class="index-idx">04</span>
-              <span class="index-title">SHERWANIS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Embroidered Raw Silk Nehru Jackets')">
-              <span class="index-idx">05</span>
-              <span class="index-title">NEHRU JACKETS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Modern Indo-Western Achkans & Bandhgalas')">
-              <span class="index-idx">06</span>
-              <span class="index-title">INDO-WESTERN</span>
-              <span class="index-arrow">→</span>
-            </a>
-          </nav>
-
-          <div class="chapter-action-wrap">
-            <button type="button" class="editorial-text-btn" data-open-enquiry data-service="Men's Bespoke Consultation">
-              <span>BOOK SARTORIAL FITTING</span>
-              <span class="btn-arrow">→</span>
+            <button type="button" class="btn btn-burgundy" data-open-enquiry data-service="Men's Bespoke Consultation">
+              BOOK BESPOKE FITTING →
             </button>
           </div>
-        </div>
 
-      </div>
+        </div>
+      </section>
+
+      <!-- Category Filter Tabs for Men -->
+      <section class="showroom-filter-bar">
+        <div class="filter-container">
+          <span class="filter-label">Filter Category:</span>
+          <div class="filter-pills" id="men-filter-pills">
+            <button type="button" class="filter-pill active" data-category="all">All Pieces</button>
+            <button type="button" class="filter-pill" data-category="suits">Suits & Tuxedos</button>
+            <button type="button" class="filter-pill" data-category="sherwanis">Sherwanis</button>
+            <button type="button" class="filter-pill" data-category="indo-western">Indo-Western</button>
+            <button type="button" class="filter-pill" data-category="kurtas">Kurtas & Nehru</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Men's Product Grid -->
+      <section class="showroom-catalog-section">
+        <div class="catalog-container">
+          <div class="products-grid" id="men-products-grid">
+            <!-- Dynamically populated / interactive product cards -->
+          </div>
+        </div>
+      </section>
 
     </div>
-  </section>
 
-  <!-- ==========================================================================
-       SECTION 03 — KIDS (FOR THE NEXT GENERATION)
-       ========================================================================== -->
-  <section class="editorial-chapter kids-chapter" id="kids-chapter">
-    <div class="chapter-container">
+    <!-- ========================================================================
+         SCREEN 3: KIDS' SHOWROOM PAGE
+         ======================================================================== -->
+    <div class="screen-view" id="view-kids">
       
-      <!-- Asymmetrical Layout Reversal for Kids -->
-      <div class="chapter-grid reverse">
-        
-        <!-- Left: Typographic Title & Index -->
-        <div class="chapter-content-column">
-          <div class="chapter-header">
-            <span class="chapter-tag">JUNIOR ATELIER</span>
-            <h2 class="chapter-heading oversized">FOR THE NEXT GENERATION</h2>
-            <p class="chapter-subtext">
-              "Miniature royal craftsmanship. Gentle pure silk blends tailored for joyful celebrations."
+      <!-- Kids Hero Banner -->
+      <section class="showroom-banner-section kids-theme">
+        <div class="showroom-banner-grid reverse">
+          
+          <div class="banner-text-wrap">
+            <span class="section-kicker">JUNIOR ATELIER</span>
+            <h1 class="banner-title">KIDS' WEAR</h1>
+            <div class="banner-highlight">"FOR THE NEXT GENERATION"</div>
+            <p class="banner-desc">
+              Miniature royal tailoring crafted in breathable pure silk blends, gentle cotton linings, and exquisite festive embellishments for boys and girls.
             </p>
-          </div>
-
-          <nav class="typographic-index" aria-label="Kids Categories">
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Junior Coat Suits & Formals')">
-              <span class="index-idx">01</span>
-              <span class="index-title">COAT SUITS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Kids Royal Silk Sherwanis')">
-              <span class="index-idx">02</span>
-              <span class="index-title">SHERWANIS</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Junior Indo-Western Sets')">
-              <span class="index-idx">03</span>
-              <span class="index-title">INDO-WESTERN</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Kids Party Wear & Bandis')">
-              <span class="index-idx">04</span>
-              <span class="index-title">PARTY WEAR</span>
-              <span class="index-arrow">→</span>
-            </a>
-            <a href="#mahawar-edit" class="index-row" onclick="openEnquiryModal('Girls Festive Lehengas & Frocks')">
-              <span class="index-idx">05</span>
-              <span class="index-title">FESTIVE WEAR</span>
-              <span class="index-arrow">→</span>
-            </a>
-          </nav>
-
-          <div class="chapter-action-wrap">
-            <button type="button" class="editorial-text-btn" data-open-enquiry data-service="Kids' Occasion Consultation">
-              <span>EXPLORE KIDS' WARDROBE</span>
-              <span class="btn-arrow">→</span>
+            <button type="button" class="btn btn-burgundy" data-open-enquiry data-service="Kids' Festive Wardrobe Consultation">
+              ENQUIRE JUNIOR WEAR →
             </button>
           </div>
-        </div>
 
-        <!-- Right: Kids Editorial Photograph -->
-        <div class="chapter-image-column">
-          <div class="chapter-image-frame kids-frame">
+          <div class="banner-photo-wrap">
             <img 
               src="assets/images/kids_editorial.jpg" 
-              alt="Kids' designer festive occasion wear by Mahawar Garments" 
-              class="chapter-img" 
-              loading="lazy">
+              alt="Kids' Festive Ethnic & Formal Couture by Mahawar Garments" 
+              class="banner-photo">
           </div>
-          <div class="chapter-image-caption">
-            <span>FIGURE 02 — JUNIOR OCCASION SILHOUETTES</span>
-            <span>HANDCRAFTED FESTIVE WEAR</span>
+
+        </div>
+      </section>
+
+      <!-- Category Filter Tabs for Kids -->
+      <section class="showroom-filter-bar">
+        <div class="filter-container">
+          <span class="filter-label">Filter Category:</span>
+          <div class="filter-pills" id="kids-filter-pills">
+            <button type="button" class="filter-pill active" data-category="all">All Kids</button>
+            <button type="button" class="filter-pill" data-category="coat-suits">Coat Suits</button>
+            <button type="button" class="filter-pill" data-category="sherwanis">Sherwanis & Bandis</button>
+            <button type="button" class="filter-pill" data-category="festive">Party & Festive Sets</button>
           </div>
         </div>
+      </section>
 
-      </div>
+      <!-- Kids Product Grid -->
+      <section class="showroom-catalog-section">
+        <div class="catalog-container">
+          <div class="products-grid" id="kids-products-grid">
+            <!-- Dynamically populated / interactive product cards -->
+          </div>
+        </div>
+      </section>
 
     </div>
-  </section>
 
-  <!-- ==========================================================================
-       SECTION 04 — OCCASIONS (HORIZONTAL / CHAPTER STORYTELLING)
-       ========================================================================== -->
-  <section class="occasions-editorial-section" id="occasions">
-    <div class="occasions-wrapper">
+    <!-- ========================================================================
+         SCREEN 4: OCCASION COLLECTIONS PAGE
+         ======================================================================== -->
+    <div class="screen-view" id="view-collections">
       
-      <!-- Section Header -->
-      <div class="occasions-lead">
-        <span class="chapter-tag">CELEBRATION CHAPTERS</span>
-        <h2 class="occasions-super-title">FOR THE MOMENTS THAT MATTER</h2>
-        <p class="occasions-lead-desc">
-          Every celebration has its own cadence. We dress you and your family for memories that endure.
-        </p>
-      </div>
-
-      <!-- 4 Editorial Occasion Panels (Flowing Horizontal Sequence) -->
-      <div class="occasions-strip">
-        
-        <!-- Occasion 01 -->
-        <div class="occasion-panel" onclick="openEnquiryModal('Wedding & Groom Royal Wardrobe')">
-          <div class="occasion-img-box">
-            <img src="assets/images/occasion_editorial.jpg" alt="Weddings and Royal Groom Couture" loading="lazy">
-          </div>
-          <div class="occasion-meta">
-            <span class="occ-idx">01</span>
-            <h3 class="occ-name">WEDDINGS</h3>
-            <p class="occ-detail">Royal Sherwanis, Reception Tuxedos & Grand Ensembles</p>
-            <span class="occ-link">DISCOVER WARDROBE →</span>
-          </div>
+      <section class="occasions-page-header">
+        <div class="page-title-box">
+          <span class="section-kicker">OCCASION DIRECTORY</span>
+          <h1 class="page-main-title">CELEBRATION COLLECTIONS</h1>
+          <p class="page-main-sub">Curated wardrobes designed specifically for life's most meaningful moments.</p>
         </div>
+      </section>
 
-        <!-- Occasion 02 -->
-        <div class="occasion-panel" onclick="openEnquiryModal('Festive Diwalis & Puja Kurtas')">
-          <div class="occasion-img-box">
-            <img src="assets/images/nehru_editorial.jpg" alt="Festivals & Pujas" loading="lazy">
-          </div>
-          <div class="occasion-meta">
-            <span class="occ-idx">02</span>
-            <h3 class="occ-name">FESTIVALS</h3>
-            <p class="occ-detail">Banarasi Kurtas, Raw Silk Nehru Jackets & Bandis</p>
-            <span class="occ-link">DISCOVER WARDROBE →</span>
-          </div>
-        </div>
-
-        <!-- Occasion 03 -->
-        <div class="occasion-panel" onclick="openEnquiryModal('Family Celebrations & Sangeet')">
-          <div class="occasion-img-box">
-            <img src="assets/images/brand_story.jpg" alt="Family Celebrations" loading="lazy">
-          </div>
-          <div class="occasion-meta">
-            <span class="occ-idx">03</span>
-            <h3 class="occ-name">CELEBRATIONS</h3>
-            <p class="occ-detail">Sangeet Jackets, Cowl Kurtas & Kids Festive Sets</p>
-            <span class="occ-link">DISCOVER WARDROBE →</span>
-          </div>
-        </div>
-
-        <!-- Occasion 04 -->
-        <div class="occasion-panel" onclick="openEnquiryModal('Black Tie & Formal Evenings')">
-          <div class="occasion-img-box">
-            <img src="assets/images/suit_editorial.jpg" alt="Formal Evenings & Black Tie" loading="lazy">
-          </div>
-          <div class="occasion-meta">
-            <span class="occ-idx">04</span>
-            <h3 class="occ-name">FORMAL EVENINGS</h3>
-            <p class="occ-detail">Italian-Cut Three-Piece Suits, Blazers & Rajneeti Cuts</p>
-            <span class="occ-link">DISCOVER WARDROBE →</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SECTION 05 — CRAFT (FULL-WIDTH BURGUNDY EDITORIAL PAUSE)
-       ========================================================================== -->
-  <section class="craft-editorial-section" id="craftsmanship">
-    <div class="craft-container">
-      <div class="craft-grid">
-        
-        <!-- Left: Oversized Serif Headline -->
-        <div class="craft-left">
-          <span class="craft-tag">THE ATELIER TRADITION</span>
-          <h2 class="craft-headline">
-            CRAFTED<br>
-            TO BE<br>
-            REMEMBERED.
-          </h2>
-          <p class="craft-body-text">
-            "Premium fabrics, thoughtful tailoring and timeless Indian craftsmanship."
-          </p>
+      <section class="occasions-gallery-section">
+        <div class="gallery-container">
           
-          <!-- 3 Pillars in Large Typographic Spacing -->
-          <div class="craft-pillars">
-            <span class="pillar">CRAFT</span>
-            <span class="pillar-sep">•</span>
-            <span class="pillar">FIT</span>
-            <span class="pillar-sep">•</span>
-            <span class="pillar">DETAIL</span>
+          <!-- Occasion 1: Weddings -->
+          <div class="gallery-card" onclick="openEnquiryModal('Wedding & Groom Royal Wardrobe')">
+            <div class="gallery-image-box">
+              <img src="assets/images/occasion_editorial.jpg" alt="Wedding Occasion Collection" loading="lazy">
+            </div>
+            <div class="gallery-card-content">
+              <span class="card-kicker">CHAPTER 01</span>
+              <h3 class="card-name">WEDDINGS & GROOMS</h3>
+              <p class="card-desc">Royal embroidered sherwanis, safas, stoles, and reception tuxedos.</p>
+              <span class="card-action">EXPLORE WARDROBE →</span>
+            </div>
           </div>
-        </div>
 
-        <!-- Right: Tailoring & Embroidery Close-Up Photo -->
-        <div class="craft-right">
-          <div class="craft-photo-frame">
-            <img 
-              src="assets/images/craftsmanship_detail.jpg" 
-              alt="Artisan hands embroidering gold zardozi on deep velvet at Mahawar Garments" 
-              loading="lazy">
+          <!-- Occasion 2: Festivals -->
+          <div class="gallery-card" onclick="openEnquiryModal('Festivals & Religious Celebrations')">
+            <div class="gallery-image-box">
+              <img src="assets/images/nehru_editorial.jpg" alt="Festive Kurtas & Nehru Jackets" loading="lazy">
+            </div>
+            <div class="gallery-card-content">
+              <span class="card-kicker">CHAPTER 02</span>
+              <h3 class="card-name">FESTIVALS & PUJAS</h3>
+              <p class="card-desc">Embroidered raw silk Nehru jackets, cowl kurtas, and Banarasi sets.</p>
+              <span class="card-action">EXPLORE WARDROBE →</span>
+            </div>
           </div>
-          <p class="craft-photo-note">
-            Over 150+ hours invested by master karigars in pure silk brocade, antique zardozi, and micro-canvas structuring.
-          </p>
-        </div>
 
-      </div>
+          <!-- Occasion 3: Parties & Sangeet -->
+          <div class="gallery-card" onclick="openEnquiryModal('Parties & Sangeet Ensembles')">
+            <div class="gallery-image-box">
+              <img src="assets/images/mens_model_seated.png" alt="Party & Sangeet Indo-Western Wear" loading="lazy">
+            </div>
+            <div class="gallery-card-content">
+              <span class="card-kicker">CHAPTER 03</span>
+              <h3 class="card-name">PARTIES & SANGEET</h3>
+              <p class="card-desc">Contemporary asymmetrical bandhgalas, jacquards, and statement sets.</p>
+              <span class="card-action">EXPLORE WARDROBE →</span>
+            </div>
+          </div>
+
+          <!-- Occasion 4: Formal Evenings -->
+          <div class="gallery-card" onclick="openEnquiryModal('Formal Evenings & Black Tie')">
+            <div class="gallery-image-box">
+              <img src="assets/images/suit_editorial.jpg" alt="Formal Suits and Blazers" loading="lazy">
+            </div>
+            <div class="gallery-card-content">
+              <span class="card-kicker">CHAPTER 04</span>
+              <h3 class="card-name">FORMAL EVENINGS</h3>
+              <p class="card-desc">Italian-cut three-piece suits, corporate blazers, and velvet dinner jackets.</p>
+              <span class="card-action">EXPLORE WARDROBE →</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
-  </section>
 
-  <!-- ==========================================================================
-       MAHAWAR EDIT — ASYMMETRICAL 4-PIECE CURATED SHOWCASE
-       ========================================================================== -->
-  <section class="mahawar-edit-section" id="mahawar-edit">
-    <div class="edit-container">
+    <!-- ========================================================================
+         SCREEN 5: SERVICES & TAILORING STUDIO PAGE
+         ======================================================================== -->
+    <div class="screen-view" id="view-services">
       
-      <div class="edit-header">
-        <span class="chapter-tag">CURATED PIECES</span>
-        <h2 class="edit-title">MAHAWAR EDIT</h2>
-        <p class="edit-sub">Four exemplar masterworks for Men & Kids.</p>
-      </div>
+      <section class="services-page-header">
+        <div class="page-title-box">
+          <span class="section-kicker">ATELIER PRIVILEGES</span>
+          <h1 class="page-main-title">BESPOKE SERVICES</h1>
+          <p class="page-main-sub">Comprehensive sartorial craftsmanship tailored to your schedule and exact measurements.</p>
+        </div>
+      </section>
 
-      <!-- Asymmetrical 4-Piece Editorial Layout -->
-      <div class="edit-asymmetric-layout">
-        
-        <!-- Piece 01 (Dominant Hero Card) -->
-        <div class="edit-item item-hero" onclick="openProductModal('prod-1')">
-          <div class="edit-img-wrap">
-            <img src="assets/images/hero_model_elegance.png" alt="Bespoke Floral Embroidered Tuxedo Suit" loading="lazy">
-          </div>
-          <div class="edit-info">
-            <span class="edit-cat">MEN'S FORMAL • COUTURE</span>
-            <h3 class="edit-name">Bespoke Floral Embroidered Tuxedo</h3>
-            <span class="edit-price">₹38,500</span>
-            <span class="edit-view">VIEW DETAILS →</span>
+      <section class="services-showcase-section">
+        <div class="services-container">
+          <div class="services-grid">
+            
+            <!-- Service 1 -->
+            <div class="service-item">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" fill="none" stroke-width="1.5">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                </svg>
+              </div>
+              <h3 class="service-name">CUSTOM MASTER TAILORING</h3>
+              <p class="service-info">
+                Bespoke canvas construction, hand-padded lapels, and precision shoulder pitch customized down to the millimeter for Men and Kids.
+              </p>
+              <button type="button" class="service-btn" data-open-enquiry data-service="Custom Master Tailoring">
+                BOOK FITTING →
+              </button>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-item">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" fill="none" stroke-width="1.5">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="service-name">EXPRESS ALTERATIONS</h3>
+              <p class="service-info">
+                Rapid adjustments for urgent wedding and event timelines. In-house master tailors ensuring perfect taper and seam finishing.
+              </p>
+              <button type="button" class="service-btn" data-open-enquiry data-service="Express Alterations">
+                REQUEST SERVICE →
+              </button>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-item">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" fill="none" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
+                </svg>
+              </div>
+              <h3 class="service-name">PERSONAL OCCASION STYLING</h3>
+              <p class="service-info">
+                One-on-one wardrobe consultations for grooms, fathers, and children to ensure harmonious fabrics, colors, and jewelry styling.
+              </p>
+              <button type="button" class="service-btn" data-open-enquiry data-service="Personal Occasion Styling">
+                CONSULT STYLIST →
+              </button>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-item">
+              <div class="service-icon-wrap">
+                <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" fill="none" stroke-width="1.5">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <h3 class="service-name">HOME & GLOBAL DELIVERY</h3>
+              <p class="service-info">
+                Secure door-to-door garment transit across Delhi NCR and express courier delivery worldwide with protective garment bags and wooden hangers.
+              </p>
+              <button type="button" class="service-btn" data-open-enquiry data-service="Global & Domestic Shipping">
+                SHIPPING DETAILS →
+              </button>
+            </div>
+
           </div>
         </div>
-
-        <!-- Piece 02 (Companion Piece 1) -->
-        <div class="edit-item item-stacked" onclick="openProductModal('prod-2')">
-          <div class="edit-img-wrap">
-            <img src="assets/images/mens_model_seated.png" alt="Royal Blue Patterned Indo-Western Set" loading="lazy">
-          </div>
-          <div class="edit-info">
-            <span class="edit-cat">MEN'S INDO-WESTERN</span>
-            <h3 class="edit-name">Royal Blue Jacquard Bandhgala</h3>
-            <span class="edit-price">₹32,000</span>
-            <span class="edit-view">VIEW DETAILS →</span>
-          </div>
-        </div>
-
-        <!-- Piece 03 (Companion Piece 2) -->
-        <div class="edit-item item-stacked" onclick="openProductModal('prod-3')">
-          <div class="edit-img-wrap">
-            <img src="assets/images/hero_editorial.jpg" alt="Imperial Velvet Royal Sherwani" loading="lazy">
-          </div>
-          <div class="edit-info">
-            <span class="edit-cat">MEN'S WEDDING COUTURE</span>
-            <h3 class="edit-name">Imperial Velvet Royal Sherwani</h3>
-            <span class="edit-price">₹48,500</span>
-            <span class="edit-view">VIEW DETAILS →</span>
-          </div>
-        </div>
-
-        <!-- Piece 04 (Kids Companion Piece) -->
-        <div class="edit-item item-offset" onclick="openProductModal('prod-4')">
-          <div class="edit-img-wrap">
-            <img src="assets/images/kids_editorial.jpg" alt="Kids Royal Ivory & Maroon Festive Ensemble" loading="lazy">
-          </div>
-          <div class="edit-info">
-            <span class="edit-cat">KIDS' FESTIVE COUTURE</span>
-            <h3 class="edit-name">Kids Royal Festive Ensemble</h3>
-            <span class="edit-price">₹12,500</span>
-            <span class="edit-view">VIEW DETAILS →</span>
-          </div>
-        </div>
-
-      </div>
+      </section>
 
     </div>
-  </section>
 
-  <!-- ==========================================================================
-       SECTION 06 — BRAND STORY (MAGAZINE SPREAD)
-       ========================================================================== -->
-  <section class="story-magazine-section" id="brand-story">
-    <div class="magazine-container">
-      <div class="magazine-spread">
-        
-        <div class="spread-left">
-          <span class="chapter-tag">HERITAGE CHAPTER</span>
-          <h2 class="magazine-brand-title">MAHAWAR GARMENTS</h2>
-          <div class="magazine-quote-block">
-            "WHERE TRADITION<br>
-            MEETS MODERN STYLE"
-          </div>
-        </div>
-
-        <div class="spread-right">
-          <p class="magazine-para lead">
-            Rooted in the royal streets of Chandni Chowk, Mahawar Garments has dressed gentlemen, grooms, and the next generation with distinguished grace for decades.
-          </p>
-          <p class="magazine-para">
-            From the handlooms of Banaras and Kashmir to master bespoke tailoring, every garment reflects our unwavering commitment to precision cut, royal fabric, and enduring generational heritage.
-          </p>
-          <div class="magazine-cta-row">
-            <button type="button" class="editorial-text-btn" data-open-enquiry data-service="Atelier Private Appointment">
-              <span>DISCOVER OUR STORY & ATELIER</span>
-              <span class="btn-arrow">→</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SECTION 07 — STORE & ATELIER INVITATION
-       ========================================================================== -->
-  <section class="store-invitation-section" id="store-contact">
-    <div class="invitation-container">
+    <!-- ========================================================================
+         SCREEN 6: ABOUT & ATELIER STORY PAGE
+         ======================================================================== -->
+    <div class="screen-view" id="view-about">
       
-      <div class="invitation-box">
-        <span class="chapter-tag on-dark">FLAGSHIP ATELIER</span>
-        <h2 class="invitation-title">VISIT MAHAWAR</h2>
-        
-        <div class="invitation-location">
-          CHANDNI CHOWK • DELHI
-        </div>
+      <section class="about-hero-section">
+        <div class="about-container">
+          <div class="about-grid">
+            
+            <div class="about-content">
+              <span class="section-kicker">OUR HERITAGE</span>
+              <h1 class="about-title">MAHAWAR GARMENTS</h1>
+              <div class="about-quote">"Where Tradition Meets Modern Style"</div>
+              
+              <p class="about-para">
+                Rooted in the historic royal avenues of Chandni Chowk, Mahawar Garments has been a revered name in bespoke Indian tailoring, groom couture, and festive elegance.
+              </p>
+              <p class="about-para">
+                We believe exceptional clothing is an inheritance of craft. From pure Banarasi silk brocades and antique hand zardozi to sharp Italian wool structuring, our creations dress gentlemen and young heirs with timeless grace.
+              </p>
+            </div>
 
-        <p class="invitation-address">
-          4794, Main Road, Opposite Krishna Market,<br>
-          Chandni Chowk, Delhi – 110006
-        </p>
+            <div class="about-image-wrap">
+              <img src="assets/images/craftsmanship_detail.jpg" alt="Zardozi handcraft at Mahawar Garments" class="about-photo">
+            </div>
 
-        <div class="invitation-meta-row">
-          <div><strong>Hours:</strong> Mon – Sun: 11:00 AM – 8:30 PM</div>
-          <div><strong>Direct Line:</strong> +91 76830 79329</div>
+          </div>
         </div>
+      </section>
 
-        <!-- Minimalist Actions -->
-        <div class="invitation-actions">
-          <a href="https://maps.google.com/?q=4794+Main+Road+Chandni+Chowk+Delhi+110006" target="_blank" rel="noopener noreferrer" class="invitation-link">
-            <span>GET DIRECTIONS</span>
-            <span class="arrow">→</span>
-          </a>
-          <button type="button" class="invitation-link" data-open-enquiry data-service="Atelier Private Appointment">
-            <span>BOOK APPOINTMENT</span>
-            <span class="arrow">→</span>
-          </button>
-          <a href="https://wa.me/917683079329" target="_blank" rel="noopener noreferrer" class="invitation-link">
-            <span>WHATSAPP DIRECT</span>
-            <span class="arrow">→</span>
-          </a>
+      <!-- Physical Store & Contact Invitation -->
+      <section class="atelier-contact-section">
+        <div class="atelier-container">
+          <div class="atelier-card">
+            
+            <span class="section-kicker on-dark">FLAGSHIP ATELIER</span>
+            <h2 class="atelier-heading">VISIT MAHAWAR GARMENTS</h2>
+            
+            <p class="atelier-address">
+              4794, Main Road, Opposite Krishna Market,<br>
+              Chandni Chowk, Delhi – 110006
+            </p>
+
+            <div class="atelier-details-grid">
+              <div>
+                <span class="detail-label">STORE TIMINGS</span>
+                <strong>Mon – Sun: 11:00 AM – 8:30 PM</strong>
+              </div>
+              <div>
+                <span class="detail-label">DIRECT CONTACT</span>
+                <strong>+91 76830 79329</strong>
+              </div>
+              <div>
+                <span class="detail-label">EMAIL INQUIRIES</span>
+                <strong>mahawargarments@gmail.com</strong>
+              </div>
+            </div>
+
+            <div class="atelier-btn-row">
+              <a href="https://maps.google.com/?q=4794+Main+Road+Chandni+Chowk+Delhi+110006" target="_blank" rel="noopener noreferrer" class="btn btn-primary-light">
+                GET DIRECTIONS →
+              </a>
+              <button type="button" class="btn btn-outline-light" data-open-enquiry data-service="Atelier Private Appointment">
+                BOOK APPOINTMENT →
+              </button>
+              <a href="https://wa.me/917683079329" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light">
+                WHATSAPP US →
+              </a>
+            </div>
+
+          </div>
         </div>
-      </div>
+      </section>
 
     </div>
-  </section>
+
+  </main>
 
   <!-- ==========================================================================
-       EDITORIAL MINIMAL FOOTER
-       ========================================================================== -->
-  <footer class="editorial-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="assets/images/mahawar_logo_light.png" alt="Mahawar Garments" class="footer-logo">
-        <span class="footer-strap">Luxury Indian Fashion House • Men & Kids</span>
-      </div>
-
-      <nav class="footer-links" aria-label="Footer Directory">
-        <a href="#two-worlds">Men's Wear</a>
-        <a href="#kids-chapter">Kids' Wear</a>
-        <a href="#mahawar-edit">The Edit</a>
-        <a href="#craftsmanship">Craft</a>
-        <a href="#brand-story">Story</a>
-        <a href="#store-contact">Atelier</a>
-      </nav>
-
-      <div class="footer-legal">
-        <span>© 2026 Mahawar Garments. All Rights Reserved. Chandni Chowk, Delhi.</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ==========================================================================
-       MINIMAL PRODUCT DETAIL MODAL
+       PRODUCT DETAIL / QUICKVIEW MODAL
        ========================================================================== -->
   <div class="modal-backdrop" id="product-detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name">
-    <div class="modal-container editorial-modal">
+    <div class="modal-container">
       <button type="button" class="modal-close-btn" aria-label="Close modal">✕</button>
       
       <div class="product-modal-grid">
@@ -669,7 +632,7 @@
         
         <div class="product-modal-content">
           <div>
-            <div class="modal-cat-row">
+            <div class="modal-meta-row">
               <span id="modal-product-tag" class="modal-tag">Signature Couture</span>
               <span id="modal-product-category" class="modal-cat">Men's Formal</span>
             </div>
@@ -709,7 +672,7 @@
       <button type="button" class="modal-close-btn" aria-label="Close modal">✕</button>
       
       <div class="enquiry-modal-box">
-        <span class="chapter-tag">MAHAWAR ATELIER SERVICE</span>
+        <span class="section-kicker">MAHAWAR ATELIER SERVICE</span>
         <h3 id="enquiry-modal-title" class="consultation-heading">Bespoke Consultation</h3>
         <p class="consultation-sub">
           Share your style preferences or fitting requirements. Our Chandni Chowk master stylist will connect with you directly.
@@ -756,59 +719,93 @@
   </div>
 
   <!-- ==========================================================================
-       FULL-SCREEN SLIDE DRAWER NAVIGATION
+       WISHLIST DRAWER
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="wishlist-drawer" role="dialog" aria-modal="true">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3 class="drawer-title">Saved Privé Pieces</h3>
+        <button type="button" class="drawer-close-btn modal-close-btn" style="position: static;" aria-label="Close wishlist">✕</button>
+      </div>
+      <div class="drawer-body" id="wishlist-items-list">
+        <!-- Injected dynamically by main.js -->
+      </div>
+      <div class="drawer-footer">
+        <button type="button" class="btn btn-burgundy" style="width: 100%;" onclick="closeAllDrawers(); openEnquiryModal('Wishlist Portfolio Consultation');">
+          Enquire All Saved Pieces
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ENQUIRY BAG DRAWER
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="bag-drawer" role="dialog" aria-modal="true">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3 class="drawer-title">Curated Enquiry Bag</h3>
+        <button type="button" class="drawer-close-btn modal-close-btn" style="position: static;" aria-label="Close bag">✕</button>
+      </div>
+      <div class="drawer-body" id="bag-items-list">
+        <!-- Injected dynamically by main.js -->
+      </div>
+      <div class="drawer-footer">
+        <p style="font-size: 0.76rem; color: var(--color-charcoal-muted); margin-bottom: 0.75rem; text-align: center;">
+          This is an editorial showcase for Men & Kids. Contact our atelier to arrange tailored fittings.
+        </p>
+        <button type="button" class="btn btn-burgundy" style="width: 100%;" onclick="closeAllDrawers(); openEnquiryModal('Curated Bag Portfolio Enquiry');">
+          Proceed with Atelier Enquiry
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MOBILE MENU DRAWER
        ========================================================================== -->
   <div class="drawer-backdrop" id="mobile-menu-drawer" role="dialog" aria-modal="true">
-    <div class="drawer-panel editorial-drawer">
+    <div class="drawer-panel" style="max-width: 340px;">
       <div class="drawer-header">
         <div class="brand-logo">
           <img src="assets/images/mahawar_logo.png" alt="Mahawar Garments" class="mobile-logo-img">
         </div>
-        <button type="button" class="drawer-close-btn modal-close-btn" aria-label="Close menu">✕</button>
+        <button type="button" class="drawer-close-btn modal-close-btn" style="position: static;" aria-label="Close menu">✕</button>
       </div>
       
       <div class="drawer-body">
         <nav class="drawer-nav">
-          <a href="#hero" class="drawer-link">
+          <a href="#home" class="drawer-link" onclick="navigateTo('home'); return false;">
             <span class="link-idx">01</span>
-            <span class="link-text">Home</span>
+            <span class="link-text">Showroom Home</span>
           </a>
-          <a href="#two-worlds" class="drawer-link">
+          <a href="#men" class="drawer-link" onclick="navigateTo('men'); return false;">
             <span class="link-idx">02</span>
-            <span class="link-text">Men's Wear</span>
+            <span class="link-text">Men's Collection</span>
           </a>
-          <a href="#kids-chapter" class="drawer-link">
+          <a href="#kids" class="drawer-link" onclick="navigateTo('kids'); return false;">
             <span class="link-idx">03</span>
-            <span class="link-text">Kids' Wear</span>
+            <span class="link-text">Kids' Collection</span>
           </a>
-          <a href="#occasions" class="drawer-link">
+          <a href="#collections" class="drawer-link" onclick="navigateTo('collections'); return false;">
             <span class="link-idx">04</span>
             <span class="link-text">Occasions</span>
           </a>
-          <a href="#craftsmanship" class="drawer-link">
+          <a href="#services" class="drawer-link" onclick="navigateTo('services'); return false;">
             <span class="link-idx">05</span>
-            <span class="link-text">Craftsmanship</span>
+            <span class="link-text">Atelier Services</span>
           </a>
-          <a href="#mahawar-edit" class="drawer-link">
+          <a href="#about" class="drawer-link" onclick="navigateTo('about'); return false;">
             <span class="link-idx">06</span>
-            <span class="link-text">The Edit</span>
-          </a>
-          <a href="#brand-story" class="drawer-link">
-            <span class="link-idx">07</span>
-            <span class="link-text">About Mahawar</span>
-          </a>
-          <a href="#store-contact" class="drawer-link">
-            <span class="link-idx">08</span>
-            <span class="link-text">Visit Atelier</span>
+            <span class="link-text">About & Atelier</span>
           </a>
         </nav>
       </div>
 
       <div class="drawer-footer">
-        <div class="drawer-contact-info">
-          <div>Chandni Chowk, Delhi – 110006</div>
-          <a href="tel:+917683079329" class="drawer-tel">+91 76830 79329</a>
-        </div>
+        <a href="tel:+917683079329" class="btn btn-burgundy" style="width: 100%;">
+          Call Atelier: +91 76830 79329
+        </a>
       </div>
     </div>
   </div>
@@ -826,13 +823,12 @@
     <div class="search-suggestions">
       <div class="search-suggestions-label">Popular Searches</div>
       <div class="suggestion-tags">
-        <span class="suggestion-tag">Floral Tuxedo</span>
-        <span class="suggestion-tag">Royal Sherwani</span>
-        <span class="suggestion-tag">Indo-Western Bandhgala</span>
-        <span class="suggestion-tag">Kids Coat Suit</span>
-        <span class="suggestion-tag">Nehru Jacket</span>
-        <span class="suggestion-tag">Silk Kurta</span>
-        <span class="suggestion-tag">Kids Festive Wear</span>
+        <span class="suggestion-tag" onclick="searchGarment('Floral Tuxedo')">Floral Tuxedo</span>
+        <span class="suggestion-tag" onclick="searchGarment('Royal Sherwani')">Royal Sherwani</span>
+        <span class="suggestion-tag" onclick="searchGarment('Indo-Western Bandhgala')">Indo-Western Bandhgala</span>
+        <span class="suggestion-tag" onclick="searchGarment('Kids Coat Suit')">Kids Coat Suit</span>
+        <span class="suggestion-tag" onclick="searchGarment('Nehru Jacket')">Nehru Jacket</span>
+        <span class="suggestion-tag" onclick="searchGarment('Silk Kurta')">Silk Kurta</span>
       </div>
     </div>
   </div>
