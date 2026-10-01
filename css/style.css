@@ -758,7 +758,150 @@ ul, ol {
 }
 
 /* ==========================================================================
-   QUALITATIVE BRAND STRIP (HERITAGE RIBBON)
+   CINEMATIC BRAND FILM SECTION (Full-Width Atmospheric Video)
+   ========================================================================== */
+
+.brand-video-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-burgundy-dark);
+  border-top: 1px solid rgba(185, 154, 99, 0.35);
+  border-bottom: 1px solid rgba(185, 154, 99, 0.35);
+  overflow: hidden;
+}
+
+.brand-video-container {
+  position: relative;
+  width: 100%;
+  height: 68vh;
+  min-height: 480px;
+  max-height: 780px;
+  overflow: hidden;
+  background-color: #1a0808;
+}
+
+.brand-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(0.96) contrast(1.05);
+}
+
+.video-brand-overlay,
+.video-tint-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(36, 12, 12, 0.72) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(36, 12, 12, 0.45) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.video-content-overlay {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  z-index: 3;
+  text-align: center;
+  pointer-events: none;
+}
+
+.video-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.video-title {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 500;
+  color: var(--color-cream-light);
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.video-sub {
+  font-size: 0.88rem;
+  color: var(--color-beige-light);
+  letter-spacing: 0.08em;
+  font-weight: 300;
+  opacity: 0.92;
+}
+
+.video-caption-bar {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.video-caption-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: var(--color-cream-light);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.video-caption-title {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: var(--color-cream-light);
+  line-height: 1.2;
+}
+
+.video-caption-title span.gold {
+  color: var(--color-gold-light);
+  font-style: italic;
+}
+
+.video-caption-desc {
+  font-size: 0.85rem;
+  color: var(--color-beige-light);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.video-fallback-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.75rem;
+  background: rgba(84, 27, 27, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-gold);
+  border-radius: 30px;
+  color: var(--color-cream-light);
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   QUALITATIVE BRAND STRIP (HERITAGE RIBBON - MEN & KIDS)
    ========================================================================== */
 
 .heritage-ribbon {
@@ -811,7 +954,7 @@ ul, ol {
 }
 
 /* ==========================================================================
-   EDITORIAL CATEGORY SECTION
+   EDITORIAL 2-CATEGORY SECTION (MEN'S WEAR & KIDS' WEAR)
    ========================================================================== */
 
 .category-section {
@@ -828,19 +971,19 @@ ul, ol {
   gap: 2rem;
 }
 
-.category-grid {
+.two-category-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem;
 }
 
 .category-card {
   position: relative;
-  height: 490px;
+  height: 540px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: var(--shadow-subtle);
-  border: 1px solid rgba(201, 174, 138, 0.3);
+  border: 1px solid rgba(201, 174, 138, 0.35);
   background-color: var(--color-cream);
   display: flex;
   flex-direction: column;
@@ -856,6 +999,7 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   filter: saturate(1.05);
 }
@@ -866,7 +1010,7 @@ ul, ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(36, 32, 30, 0.88) 0%, rgba(61, 17, 17, 0.4) 45%, transparent 80%);
+  background: linear-gradient(to top, rgba(36, 18, 18, 0.92) 0%, rgba(61, 17, 17, 0.45) 45%, transparent 80%);
   transition: background var(--transition-normal);
   z-index: 1;
 }
@@ -874,43 +1018,43 @@ ul, ol {
 .category-card-content {
   position: relative;
   z-index: 2;
-  padding: 2rem 1.75rem;
+  padding: 2.5rem 2.25rem;
   transform: translateY(0);
   transition: transform var(--transition-normal);
 }
 
 .category-card-tag {
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-gold-light);
   font-weight: 600;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.45rem;
 }
 
 .category-card-title {
   font-family: var(--font-serif-headline);
-  font-size: 1.85rem;
+  font-size: 2.4rem;
   font-weight: 500;
   color: var(--color-cream-light);
-  line-height: 1.15;
-  margin-bottom: 0.5rem;
+  line-height: 1.12;
+  margin-bottom: 0.6rem;
 }
 
 .category-card-desc {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--color-beige-light);
   font-weight: 300;
-  line-height: 1.45;
-  margin-bottom: 1.25rem;
-  opacity: 0.85;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
 .category-card-arrow {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
@@ -920,11 +1064,11 @@ ul, ol {
 
 /* Hover State */
 .category-card:hover .category-card-bg {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
 .category-card:hover .category-card-overlay {
-  background: linear-gradient(to top, rgba(61, 17, 17, 0.95) 0%, rgba(36, 32, 30, 0.5) 55%, rgba(0, 0, 0, 0.15) 100%);
+  background: linear-gradient(to top, rgba(61, 17, 17, 0.96) 0%, rgba(36, 18, 18, 0.6) 55%, rgba(0, 0, 0, 0.2) 100%);
 }
 
 .category-card:hover .category-card-content {
@@ -934,6 +1078,64 @@ ul, ol {
 .category-card:hover .category-card-arrow {
   gap: 0.85rem;
   color: var(--color-white);
+}
+
+/* ==========================================================================
+   CRAFTED FOR THE MOMENT - ASYMMETRICAL EDITORIAL SHOWCASE (IMAGE 2)
+   ========================================================================== */
+
+.crafted-moment-section {
+  padding: 6.5rem 0;
+  background: linear-gradient(135deg, var(--color-ivory) 0%, var(--color-cream) 100%);
+  border-top: 1px solid rgba(201, 174, 138, 0.35);
+  border-bottom: 1px solid rgba(201, 174, 138, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.crafted-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.crafted-image-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+  border: 1px solid rgba(201, 174, 138, 0.5);
+  background-color: var(--color-cream);
+  max-height: 640px;
+}
+
+.crafted-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.crafted-content {
+  padding-right: 1.5rem;
+}
+
+.crafted-quote {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-burgundy-dark);
+  margin-bottom: 1.5rem;
+}
+
+.crafted-desc {
+  font-size: 1.05rem;
+  color: var(--color-charcoal-light);
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
 }
 
 /* ==========================================================================
@@ -1577,16 +1779,18 @@ ul, ol {
 .story-watermark {
   position: absolute;
   top: 50%;
-  left: -20%;
+  left: 0;
   transform: translateY(-50%);
   font-family: var(--font-serif-headline);
-  font-size: 18vw;
+  font-size: clamp(6rem, 14vw, 12rem);
   color: rgba(255, 255, 255, 0.02);
   pointer-events: none;
   font-weight: 700;
   white-space: nowrap;
   user-select: none;
   z-index: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 /* ==========================================================================
@@ -2302,12 +2506,23 @@ ul, ol {
   }
 
   .hero-grid,
+  .two-category-grid,
+  .crafted-grid,
   .mens-grid,
   .craftsmanship-grid,
   .story-grid,
   .store-grid {
     grid-template-columns: 1fr;
     gap: 2.75rem;
+  }
+
+  .brand-video-container {
+    height: 54vh;
+    min-height: 360px;
+  }
+
+  .crafted-content {
+    padding-right: 0;
   }
 
   .hero-content {
@@ -2506,13 +2721,38 @@ ul, ol {
   /* Section Headings */
   .category-section,
   .occasions-section,
+  .kids-collection-section,
+  .crafted-moment-section,
   .mens-feature-section,
   .signatures-section,
   .craftsmanship-section,
   .services-section,
   .story-section,
   .store-section {
-    padding: 4rem 0;
+    padding: 3.5rem 0;
+  }
+
+  .brand-video-container {
+    height: 48vh;
+    min-height: 290px;
+    max-height: 420px;
+  }
+
+  .brand-video-element {
+    object-position: center 20%;
+  }
+
+  .video-content-overlay {
+    bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .video-title {
+    font-size: 1.35rem;
+  }
+
+  .video-sub {
+    font-size: 0.78rem;
   }
 
   .section-header-wrap {
@@ -2529,6 +2769,7 @@ ul, ol {
   }
 
   /* Category Cards on Mobile */
+  .two-category-grid,
   .category-grid,
   .occasions-grid,
   .products-grid,
@@ -2538,7 +2779,26 @@ ul, ol {
   }
 
   .category-card {
-    height: 400px;
+    height: 380px;
+  }
+
+  .crafted-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .crafted-image-wrap {
+    max-height: 440px;
+  }
+
+  .crafted-quote {
+    font-size: 1.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .crafted-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .category-card-content {

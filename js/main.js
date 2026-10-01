@@ -1,16 +1,41 @@
 /**
  * MAHAWAR GARMENTS - Interactive Engine
  * Refined luxury fashion interactions, state management, modal handlers, and drawer controls.
+ * Specializing in Men's Wear & Kids' Wear.
  */
 
-// Product Catalog Data for Dynamic Modals & Showcase
+// Product Catalog Data for Dynamic Modals & Showcase (Men & Kids Only)
 const PRODUCTS_DATA = [
   {
     id: 'prod-1',
-    name: 'Imperial Velvet Royal Sherwani',
-    category: 'Occasion & Wedding',
-    price: '₹48,500',
+    name: 'Bespoke Floral Embroidered Tuxedo Suit',
+    category: "Men's Formal & Party",
+    price: '₹38,500',
+    tag: 'Signature Couture',
+    image: 'assets/images/hero_model_elegance.png',
+    description: 'Precision-tailored black formal tuxedo featuring intricate metallic botanical embroidery, structured shawl lapels, contrast black waistcoat, crisp white dress shirt with silk bow tie, and flat-front trousers.',
+    fabric: 'Italian Wool Blend & Pure Silk Satin Lapel',
+    timeline: '7-10 Days Master Tailoring',
+    includes: 'Embroidered Blazer, Waistcoat, Shirt, Bow Tie & Trousers'
+  },
+  {
+    id: 'prod-2',
+    name: 'Royal Blue Patterned Indo-Western Set',
+    category: "Men's Indo-Western",
+    price: '₹32,000',
     tag: 'Bespoke Heritage',
+    image: 'assets/images/mens_model_seated.png',
+    description: 'Mastercrafted navy and slate blue woven jacquard bandhgala jacket with Mandarin collar and bespoke brass brooch. Paired with tailored slim-fit trousers in deep midnight blue.',
+    fabric: 'Silk Brocade Jacquard & Premium Tropical Wool',
+    timeline: '8-10 Days Master Tailoring',
+    includes: 'Indo-Western Jacket, Brooch & Tapered Trouser'
+  },
+  {
+    id: 'prod-3',
+    name: 'Imperial Velvet Royal Sherwani',
+    category: "Men's Wedding Couture",
+    price: '₹48,500',
+    tag: 'Bridal & Groom',
     image: 'assets/images/hero_editorial.jpg',
     description: 'Mastercrafted in deep burgundy Italian micro-velvet, embellished with exquisite hand-worked antique gold zardozi along the collar, cuffs, and hemline. Paired with a tailored pure silk churidar and handcrafted velvet stole.',
     fabric: 'Pure Silk Velvet & Raw Silk Churidar',
@@ -18,35 +43,23 @@ const PRODUCTS_DATA = [
     includes: 'Sherwani, Churidar, Stole & Pocket Square'
   },
   {
-    id: 'prod-2',
-    name: 'Bespoke Charcoal Three-Piece Suit',
-    category: "Men's Formal",
-    price: '₹28,900',
-    tag: 'Italian Cut',
-    image: 'assets/images/suit_editorial.jpg',
-    description: 'Precision-tailored from Super 140s Merino wool. Features structured soft canvas shoulders, peak lapels, a tailored double-breasted contrast waistcoat, and flat-front trousers with side adjusters.',
-    fabric: 'Super 140s Australian Merino Wool & Silk Lining',
-    timeline: '7-10 Days Tailoring Time',
-    includes: 'Jacket, Waistcoat, Trouser & Hanger Set'
-  },
-  {
-    id: 'prod-3',
-    name: 'Heritage Embroidered Silk Kurta Set',
-    category: 'Festive & Occasion',
-    price: '₹14,500',
-    tag: 'Artisan Crafted',
-    image: 'assets/images/brand_story.jpg',
-    description: 'Handspun Matka silk kurta in royal wine hue with intricate needlepoint thread embroidery across the neckline and yoke. Accompanied by relaxed silk-blend aligarhi trousers.',
-    fabric: 'Handspun Matka Silk & Cotton Silk Blend',
-    timeline: '5-7 Days Delivery',
-    includes: 'Kurta & Aligarhi Pant'
-  },
-  {
     id: 'prod-4',
+    name: 'Kids Royal Ivory & Maroon Festive Ensemble',
+    category: "Kids' Festive & Occasion",
+    price: '₹12,500',
+    tag: 'Kids Couture',
+    image: 'assets/images/kids_editorial.jpg',
+    description: 'Handcrafted festive Indo-Western sherwani for young boys and ornate lehenga sets for girls. Tailored with lightweight silk blends and gentle linings for royal comfort.',
+    fabric: 'Raw Silk Blend & Soft Cotton Lining',
+    timeline: '4-6 Days Delivery',
+    includes: 'Jacket/Sherwani, Kurta & Churidar Set'
+  },
+  {
+    id: 'prod-5',
     name: 'Ornate Ivory & Gold Nehru Jacket Set',
-    category: 'Festive & Indo-Western',
+    category: "Men's Festive & Indo-Western",
     price: '₹18,500',
-    tag: 'Signature Piece',
+    tag: 'Festive Classic',
     image: 'assets/images/nehru_editorial.jpg',
     description: 'Rich metallic gold jaal embroidery on raw silk bandi, layered gracefully over a deep burgundy satin silk cowl kurta and tailored tapered trousers.',
     fabric: 'Banarasi Raw Silk & Satin Silk',
@@ -54,33 +67,21 @@ const PRODUCTS_DATA = [
     includes: 'Nehru Jacket, Kurta & Tapered Trouser'
   },
   {
-    id: 'prod-5',
-    name: 'Contemporary Maroon Indo-Western Achkan',
-    category: "Men's Designer",
-    price: '₹34,000',
-    tag: 'Modern Royal',
-    image: 'assets/images/mens_editorial.jpg',
-    description: 'Asymmetric contemporary cut jacket with concealed placket, subtle tonal threadwork, and bespoke gold crest buttons. Ideal for sangeet and reception soirees.',
-    fabric: 'Silk Brocade & Premium Tropical Wool',
-    timeline: '10-12 Days Tailoring Time',
-    includes: 'Indo-Western Jacket, Inner Kurta & Slim Trouser'
-  },
-  {
     id: 'prod-6',
-    name: 'Champagne & Burgundy Royal Bridal Lehenga',
-    category: 'Couture & Festive',
-    price: '₹62,000',
-    tag: 'Heirloom Piece',
-    image: 'assets/images/womens_editorial.jpg',
-    description: 'Grand flared champagne gold lehenga adorned with hand-embroidered floral motifs, paired with a rich velvet blouse in royal burgundy and a delicate scalloped tulle dupatta.',
-    fabric: 'Georgette Silk, Micro Velvet & French Tulle',
-    timeline: '20-25 Days Handcrafting Time',
-    includes: 'Lehenga Skirt, Designer Blouse & Dupatta'
+    name: 'Junior Bespoke Three-Piece Coat Suit',
+    category: "Kids' Party & Formal",
+    price: '₹14,900',
+    tag: 'Junior Gentleman',
+    image: 'assets/images/suit_editorial.jpg',
+    description: 'Miniature precision tailoring for young boys. Structured jacket with contrast waistcoat, crisp formal shirt, and comfortable stretch-wool formal pants.',
+    fabric: 'Fine Wool Blend & Breathable Silk Lining',
+    timeline: '5-7 Days Master Tailoring',
+    includes: 'Suit Jacket, Vest, Shirt, Tie & Trouser'
   }
 ];
 
 // Wishlist State (persisted in localStorage)
-let wishlistItems = JSON.parse(localStorage.getItem('mahawar_wishlist')) || ['prod-1', 'prod-4'];
+let wishlistItems = JSON.parse(localStorage.getItem('mahawar_wishlist')) || ['prod-1', 'prod-2'];
 let cartItems = JSON.parse(localStorage.getItem('mahawar_cart')) || [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -92,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCategoryChips();
   initSmoothScroll();
   initContactForms();
+  initVideoAutoplay();
   updateWishlistUI();
   updateCartUI();
 });
@@ -113,6 +115,33 @@ function initHeaderScroll() {
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
+}
+
+/* --------------------------------------------------------------------------
+   Video Autoplay & Error Resilience
+   -------------------------------------------------------------------------- */
+function initVideoAutoplay() {
+  const video = document.getElementById('brand-film-video');
+  const playBtn = document.getElementById('video-fallback-play-btn');
+
+  if (!video) return;
+
+  // Attempt autoplay muted
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      // If browser blocked autoplay, show subtle play button overlay
+      if (playBtn) playBtn.style.display = 'flex';
+    });
+  }
+
+  if (playBtn) {
+    playBtn.addEventListener('click', () => {
+      video.muted = true;
+      video.play();
+      playBtn.style.display = 'none';
+    });
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -145,7 +174,7 @@ function initModals() {
   document.querySelectorAll('[data-open-enquiry]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const service = btn.getAttribute('data-service') || 'General Custom Tailoring Enquiry';
+      const service = btn.getAttribute('data-service') || 'Custom Tailoring & Styling Consultation';
       openEnquiryModal(service);
     });
   });
@@ -196,7 +225,7 @@ function openProductModal(productId) {
   document.body.style.overflow = 'hidden';
 }
 
-function openEnquiryModal(subject = 'Bespoke Styling Consultation') {
+function openEnquiryModal(subject = 'Bespoke Wardrobe Consultation') {
   const modal = document.getElementById('enquiry-modal');
   const subjectInput = modal.querySelector('#enquiry-subject');
   if (subjectInput) {
@@ -307,13 +336,11 @@ function toggleWishlist(productId, buttonElement = null) {
 }
 
 function updateWishlistUI() {
-  // Update badge count
   const badge = document.getElementById('wishlist-count-badge');
   if (badge) {
     badge.textContent = wishlistItems.length;
   }
 
-  // Update heart buttons on cards
   document.querySelectorAll('.wishlist-toggle').forEach(btn => {
     const pId = btn.getAttribute('data-product-id');
     if (wishlistItems.includes(pId)) {
@@ -323,7 +350,6 @@ function updateWishlistUI() {
     }
   });
 
-  // Render Wishlist Drawer Content
   const listContainer = document.getElementById('wishlist-items-list');
   if (!listContainer) return;
 
@@ -331,7 +357,7 @@ function updateWishlistUI() {
     listContainer.innerHTML = `
       <div style="text-align: center; padding: 3rem 1rem; color: var(--color-charcoal-muted);">
         <p style="font-family: var(--font-serif-headline); font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--color-burgundy);">Your wishlist is empty</p>
-        <p style="font-size: 0.85rem;">Discover our signature collection and click the heart icon on any piece you admire.</p>
+        <p style="font-size: 0.85rem;">Discover our men & kids signatures and click the heart icon on any piece you admire.</p>
       </div>
     `;
     return;
@@ -403,7 +429,7 @@ function updateCartUI() {
           <path d="M16 10a4 4 0 0 1-8 0"></path>
         </svg>
         <p style="font-family: var(--font-serif-headline); font-size: 1.25rem; margin-bottom: 0.4rem; color: var(--color-burgundy);">Your Collection is Empty</p>
-        <p style="font-size: 0.82rem; line-height: 1.5;">This is an editorial luxury portfolio. Add garments to your curated enquiry bag to request tailored bespoke fitting.</p>
+        <p style="font-size: 0.82rem; line-height: 1.5;">This is an editorial luxury portfolio for Men & Kids. Add garments to your curated enquiry bag to request tailored fittings.</p>
       </div>
     `;
     return;
@@ -454,7 +480,6 @@ function initSearch() {
     searchClose.addEventListener('click', closeSearchOverlay);
   }
 
-  // Suggestion tags click
   document.querySelectorAll('.suggestion-tag').forEach(tag => {
     tag.addEventListener('click', () => {
       const term = tag.textContent.trim();
@@ -480,7 +505,7 @@ function closeSearchOverlay() {
 }
 
 /* --------------------------------------------------------------------------
-   Category Chips (Men's Feature)
+   Category Chips (Men's & Kids' Feature)
    -------------------------------------------------------------------------- */
 function initCategoryChips() {
   const chips = document.querySelectorAll('.mens-chip');
@@ -520,7 +545,6 @@ function initSmoothScroll() {
    Contact & Consultation Forms
    -------------------------------------------------------------------------- */
 function initContactForms() {
-  // Main Consultation / Enquiry Form
   const enquiryForm = document.getElementById('enquiry-form');
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', (e) => {
@@ -531,7 +555,6 @@ function initContactForms() {
     });
   }
 
-  // Footer Newsletter Form
   const newsForm = document.getElementById('footer-newsletter-form');
   if (newsForm) {
     newsForm.addEventListener('submit', (e) => {
