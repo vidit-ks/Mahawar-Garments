@@ -140,7 +140,7 @@ button {
 }
 
 .brand-logo-img {
-  height: 48px;
+  height: 54px;
   width: auto;
   object-fit: contain;
   transition: transform var(--transition-normal);
@@ -325,13 +325,15 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
-  transform: scale(1.01);
+  transform: scale(1.10);
+  transform-origin: center 20%;
   transition: transform var(--transition-slow);
 }
 
 .entrance-photo-frame:hover .entrance-photo {
-  transform: scale(1.03);
+  transform: scale(1.14);
 }
 
 .entrance-photo-caption {
@@ -397,7 +399,7 @@ button {
 }
 
 .entrance-video-box {
-  max-width: 1240px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -428,7 +430,7 @@ button {
 .video-window-frame {
   position: relative;
   width: 100%;
-  height: clamp(380px, 58vh, 640px);
+  height: clamp(500px, 75vh, 820px);
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
@@ -440,37 +442,52 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   display: block;
 }
 
 .video-window-controls {
   position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 1.75rem;
+  right: 1.75rem;
   display: flex;
-  gap: 0.75rem;
   z-index: 5;
 }
 
-.video-pill {
-  padding: 0.55rem 1.15rem;
-  background: rgba(36, 12, 12, 0.82);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--color-gold);
-  border-radius: 30px;
-  color: var(--color-cream-light);
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 600;
+.video-speaker-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(36, 12, 12, 0.88);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   transition: all var(--transition-fast);
 }
 
-.video-pill:hover {
+.video-speaker-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  transition: transform var(--transition-fast);
+}
+
+.video-speaker-btn:hover {
   background: var(--color-burgundy);
+  color: var(--color-cream-light);
   border-color: var(--color-gold-light);
-  transform: translateY(-2px);
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(84, 27, 27, 0.55);
+}
+
+.video-speaker-btn:active {
+  transform: scale(0.95);
 }
 
 /* ==========================================================================
@@ -545,6 +562,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -764,6 +782,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .banner-title {
@@ -884,6 +903,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform var(--transition-slow);
 }
 
@@ -1042,6 +1062,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   transition: transform var(--transition-slow);
 }
 
@@ -1233,6 +1254,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 /* Atelier Store Invitation Card */
@@ -1412,6 +1434,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .product-modal-content {
@@ -1817,8 +1840,8 @@ button {
   }
 
   .video-window-frame {
-    height: 46vh;
-    min-height: 280px;
+    height: 58vh;
+    min-height: 360px;
   }
 
   .video-window-controls {
@@ -1826,9 +1849,14 @@ button {
     right: 1rem;
   }
 
-  .video-pill {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.62rem;
+  .video-speaker-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .video-speaker-btn svg {
+    width: 19px;
+    height: 19px;
   }
 
   .products-grid {

@@ -26,7 +26,7 @@
       
       <!-- Brand Logo -->
       <a href="#home" class="brand-logo" onclick="navigateTo('home'); return false;" aria-label="Mahawar Garments Home">
-        <img src="assets/images/mahawar_logo.png" alt="Mahawar Garments" class="brand-logo-img">
+        <img src="assets/images/mahawar_logo.png?v=2" alt="Mahawar Garments" class="brand-logo-img">
       </a>
 
       <!-- Primary Showroom Destinations -->
@@ -163,13 +163,18 @@
               Your browser does not support HTML5 video.
             </video>
 
-            <!-- Video Controls -->
+            <!-- Speaker Sound Toggle Button -->
             <div class="video-window-controls">
-              <button type="button" id="video-sound-toggle-btn" class="video-pill" aria-label="Toggle Audio">
-                <span id="sound-toggle-text">UNMUTE SOUND</span>
-              </button>
-              <button type="button" id="video-playpause-btn" class="video-pill" aria-label="Pause Video">
-                <span id="playpause-text">PAUSE</span>
+              <button type="button" id="video-sound-toggle-btn" class="video-speaker-btn" aria-label="Toggle Sound" title="Toggle Sound">
+                <svg class="speaker-icon icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+                <svg class="speaker-icon icon-unmuted" style="display: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
               </button>
             </div>
           </div>
@@ -188,11 +193,10 @@
           <!-- Door 1: MEN -->
           <div class="door-card door-men" onclick="navigateTo('men')" role="button" tabindex="0">
             <div class="door-bg-wrap">
-              <img src="assets/images/mens_editorial.jpg" alt="Men's Bespoke Showroom" class="door-bg-img" loading="lazy">
+              <img src="assets/images/mens_model_seated.png" alt="Men's Bespoke Showroom" class="door-bg-img" loading="lazy">
             </div>
             <div class="door-overlay"></div>
             <div class="door-content">
-              <span class="door-tag">COLLECTION 01</span>
               <h3 class="door-name">MEN</h3>
               <p class="door-desc">"Sharp tailoring. Timeless tradition."</p>
               <span class="door-btn">ENTER MEN'S SHOWROOM →</span>
@@ -206,7 +210,6 @@
             </div>
             <div class="door-overlay"></div>
             <div class="door-content">
-              <span class="door-tag">COLLECTION 02</span>
               <h3 class="door-name">KIDS</h3>
               <p class="door-desc">"Festive style made for little moments."</p>
               <span class="door-btn">ENTER KIDS' SHOWROOM →</span>
@@ -768,7 +771,7 @@
     <div class="drawer-panel" style="max-width: 340px;">
       <div class="drawer-header">
         <div class="brand-logo">
-          <img src="assets/images/mahawar_logo.png" alt="Mahawar Garments" class="mobile-logo-img">
+          <img src="assets/images/mahawar_logo.png?v=2" alt="Mahawar Garments" class="mobile-logo-img">
         </div>
         <button type="button" class="drawer-close-btn modal-close-btn" style="position: static;" aria-label="Close menu">✕</button>
       </div>

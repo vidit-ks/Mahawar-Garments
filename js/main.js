@@ -341,7 +341,6 @@ function initCategoryFilters() {
 function initVideoAutoplay() {
   const video = document.getElementById('brand-film-video');
   const soundToggleBtn = document.getElementById('video-sound-toggle-btn');
-  const playpauseBtn = document.getElementById('video-playpause-btn');
 
   if (!video) return;
 
@@ -351,27 +350,20 @@ function initVideoAutoplay() {
   });
 
   if (soundToggleBtn) {
-    const text = soundToggleBtn.querySelector('#sound-toggle-text');
+    const iconMuted = soundToggleBtn.querySelector('.icon-muted');
+    const iconUnmuted = soundToggleBtn.querySelector('.icon-unmuted');
+
     soundToggleBtn.addEventListener('click', () => {
       if (video.muted) {
         video.muted = false;
-        if (text) text.textContent = 'MUTE SOUND';
+        if (iconMuted) iconMuted.style.display = 'none';
+        if (iconUnmuted) iconUnmuted.style.display = 'block';
+        soundToggleBtn.setAttribute('title', 'Mute Sound');
       } else {
         video.muted = true;
-        if (text) text.textContent = 'UNMUTE SOUND';
-      }
-    });
-  }
-
-  if (playpauseBtn) {
-    const text = playpauseBtn.querySelector('#playpause-text');
-    playpauseBtn.addEventListener('click', () => {
-      if (video.paused) {
-        video.play();
-        if (text) text.textContent = 'PAUSE';
-      } else {
-        video.pause();
-        if (text) text.textContent = 'PLAY';
+        if (iconMuted) iconMuted.style.display = 'block';
+        if (iconUnmuted) iconUnmuted.style.display = 'none';
+        soundToggleBtn.setAttribute('title', 'Unmute Sound');
       }
     });
   }
