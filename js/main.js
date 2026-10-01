@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
    Sticky Header Scroll Behavior
    -------------------------------------------------------------------------- */
 function initHeaderScroll() {
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector('#site-header, .editorial-header');
   if (!header) return;
 
   const handleScroll = () => {
