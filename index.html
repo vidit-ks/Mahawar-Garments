@@ -166,37 +166,62 @@
   </section>
 
   <!-- ==========================================================================
-       CINEMATIC VIDEO SECTION (ATTACHED BRAND FILM)
+       CINEMATIC VIDEO SECTION (THEATER PRESENTATION)
        ========================================================================== -->
   <section class="brand-video-section" id="brand-film" aria-label="Mahawar Garments Brand Film">
-    <div class="brand-video-container">
-      <video 
-        id="brand-film-video" 
-        class="brand-video-element" 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        preload="metadata"
-        poster="assets/images/video_poster.jpg">
-        <source src="assets/videos/mahawar_brand_film.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-
-      <!-- Warm Subtle Luxury Overlay -->
-      <div class="video-brand-overlay"></div>
-
-      <!-- Video Storytelling Text Overlay -->
-      <div class="video-content-overlay">
+    <div class="container-wide">
+      
+      <!-- Video Section Header -->
+      <div class="video-header-wrap">
         <span class="video-tag">CINEMATIC ATELIER CAMPAIGN</span>
-        <h2 class="video-title">The Essence of Modern Indian Sartorial Art</h2>
-        <p class="video-sub">From regal wedding sherwanis to Italian-cut suits and festive youth wear.</p>
+        <h2 class="video-section-title">The Essence of Modern Indian Sartorial Art</h2>
+        <p class="video-section-sub">Tradition, movement, and royal tailoring brought to life.</p>
       </div>
 
-      <!-- Fallback Play Button if browser policy delays autoplay -->
-      <button type="button" id="video-fallback-play-btn" class="video-fallback-play" aria-label="Play Brand Video" style="display: none;">
-        <span>▶ Play Campaign Film</span>
-      </button>
+      <!-- Luxury Theater Video Frame (16:9 Natural Aspect Ratio) -->
+      <div class="brand-video-theater">
+        <video 
+          id="brand-film-video" 
+          class="brand-video-element" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          preload="auto"
+          poster="assets/images/video_poster.jpg">
+          <source src="assets/videos/mahawar_brand_film.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <!-- Subtle Gold Border Frame -->
+        <div class="video-frame-border"></div>
+
+        <!-- Sleek Floating Video Controls (Sound Toggle & Play/Pause) -->
+        <div class="video-controls-bar">
+          <button type="button" id="video-sound-toggle-btn" class="video-control-pill" aria-label="Toggle Sound">
+            <svg class="sound-icon-muted" viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" fill="none" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <svg class="sound-icon-unmuted" style="display: none;" viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" fill="none" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <span id="sound-toggle-text">Unmute</span>
+          </button>
+
+          <button type="button" id="video-playpause-btn" class="video-control-pill" aria-label="Pause/Play Video">
+            <span id="playpause-text">Pause</span>
+          </button>
+        </div>
+
+        <!-- Fallback Play Button if browser policy delays autoplay -->
+        <button type="button" id="video-fallback-play-btn" class="video-fallback-play" aria-label="Play Brand Video" style="display: none;">
+          <span>▶ Play Campaign Film</span>
+        </button>
+      </div>
+
     </div>
   </section>
 

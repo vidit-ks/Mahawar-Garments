@@ -118,11 +118,13 @@ function initHeaderScroll() {
 }
 
 /* --------------------------------------------------------------------------
-   Video Autoplay & Error Resilience
+   Video Autoplay, Sound Toggle & Interactive Controls
    -------------------------------------------------------------------------- */
 function initVideoAutoplay() {
   const video = document.getElementById('brand-film-video');
-  const playBtn = document.getElementById('video-fallback-play-btn');
+  const fallbackPlayBtn = document.getElementById('video-fallback-play-btn');
+  const soundToggleBtn = document.getElementById('video-sound-toggle-btn');
+  const playpauseBtn = document.getElementById('video-playpause-btn');
 
   if (!video) return;
 
@@ -130,16 +132,54 @@ function initVideoAutoplay() {
   const playPromise = video.play();
   if (playPromise !== undefined) {
     playPromise.catch(() => {
-      // If browser blocked autoplay, show subtle play button overlay
-      if (playBtn) playBtn.style.display = 'flex';
+      if (fallbackPlayBtn) fallbackPlayBtn.style.display = 'flex';
     });
   }
 
-  if (playBtn) {
-    playBtn.addEventListener('click', () => {
+  if (fallbackPlayBtn) {
+    fallbackPlayBtn.addEventListener('click', () => {
       video.muted = true;
       video.play();
-      playBtn.style.display = 'none';
+      fallbackPlayBtn.style.display = 'none';
+      if (playpauseBtn) {
+        const text = playpauseBtn.querySelector('#playpause-text');
+        if (text) text.textContent = 'Pause';
+      }
+    });
+  }
+
+  // Sound Mute/Unmute Toggle
+  if (soundToggleBtn) {
+    const mutedIcon = soundToggleBtn.querySelector('.sound-icon-muted');
+    const unmutedIcon = soundToggleBtn.querySelector('.sound-icon-unmuted');
+    const toggleText = soundToggleBtn.querySelector('#sound-toggle-text');
+
+    soundToggleBtn.addEventListener('click', () => {
+      if (video.muted) {
+        video.muted = false;
+        if (mutedIcon) mutedIcon.style.display = 'none';
+        if (unmutedIcon) unmutedIcon.style.display = 'inline-block';
+        if (toggleText) toggleText.textContent = 'Mute';
+      } else {
+        video.muted = true;
+        if (mutedIcon) mutedIcon.style.display = 'inline-block';
+        if (unmutedIcon) unmutedIcon.style.display = 'none';
+        if (toggleText) toggleText.textContent = 'Unmute';
+      }
+    });
+  }
+
+  // Play / Pause Toggle
+  if (playpauseBtn) {
+    const playText = playpauseBtn.querySelector('#playpause-text');
+    playpauseBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        if (playText) playText.textContent = 'Pause';
+      } else {
+        video.pause();
+        if (playText) playText.textContent = 'Play';
+      }
     });
   }
 }
